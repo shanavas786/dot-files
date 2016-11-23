@@ -1,0 +1,7 @@
+[user]
+	name = Shanavas M
+	email = shanavas.m2@gmail.com
+[transfer]
+	fsckObjects = false
+[fsck]
+	zeroPaddedFilemode = ignore
