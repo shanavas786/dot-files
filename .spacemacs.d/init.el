@@ -35,7 +35,6 @@ values."
              :ssl nil
              :nick "shanavas")))
      git
-     go
      gtags
      haskell
      helm
@@ -43,7 +42,6 @@ values."
      java
      javascript
      latex
-     lua
      markdown
      org
      php
@@ -113,7 +111,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'random
+   dotspacemacs-startup-banner 'official
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -122,25 +120,25 @@ values."
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
    dotspacemacs-startup-recent-list-size 5
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'text-mode
+   dotspacemacs-scratch-mode 'lisp-interaction-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(deeper-blue
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
+                         monokai
+                         deeper-blue
                          spacemacs-light
                          solarized-light
                          solarized-dark
                          leuven
-                         monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    ;; (set-frame-font  "Source Code Pro for Powerline-13")
-   dotspacemacs-default-font '("Source Code Pro for Powerline" ;;"Inconsolata"
-                               :size 19
+   dotspacemacs-default-font '("Source Code Pro" ;;"Inconsolata"
+                               :size 17
                                :weight normal
                                :width normal
                                :powerline-scale 1.2)
@@ -239,14 +237,14 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
-   dotspacemacs-highlight-delimiters nil
+   dotspacemacs-highlight-delimiters 'all
    ;; If non nil advises quit functions to keep server open when quitting.
    ;; (default nil)
    dotspacemacs-persistent-server nil
@@ -279,7 +277,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;; additional keywords to identify
     js2-additional-externs '("describe" "expect" "before" "beforeEach" "after" "afterEach" "it" "angular")
     ;; elfeed cofiguration files
-    rmh-elfeed-org-files (list "~/org/feeds.org")
+    ;; rmh-elfeed-org-files (list "~/org/feeds.org")
     ;; python offset
     python-indent-offset 2
     ;; css offset
@@ -292,42 +290,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
     web-mode-css-indent-offset 2
     ))
 
-(defun my-dwim ()
-    (let ((next-char (following-char))
-         (inserted-char (preceding-char))
-         (previous-char (char-before (- (point) 1)))
-         (current-pos (point)))
-    (cond
-      ((eq inserted-char ?\;)
-        (end-of-line)
-        (if (eq (preceding-char) inserted-char)
-          (unless (= current-pos (point))
-            (progn
-              (delete-char -1)
-              (goto-char current-pos)))
-          (progn
-            (insert-char inserted-char)
-            (goto-char current-pos)
-            (delete-char -1)))))
-    ;; $. --> $this->
-    (cond
-      ((and
-         (eq inserted-char ?\.)
-         (eq (char-before (1- (point))) ?\$))
-        (delete-char -1)
-        (insert "this->")))))
-
-(defun goto-match-paren ()
-  "Go to the matching  if on (){}[], similar to vi style of %."
-  (interactive)
-  ;; first, check for "outside of bracket" positions expected by forward-sexp, etc
-  (cond ((looking-at "[\[\(\{]") (forward-sexp))
-        ((looking-back "[\]\)\}]" 1) (backward-sexp))
-        ;; now, try to succeed from inside of a bracket
-        ((looking-at "[\]\)\}]") (forward-char) (backward-sexp))
-        ((looking-back "[\[\(\{]" 1) (backward-char) (forward-sexp))
-        (t nil)))
-
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -336,6 +298,9 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; (add-to-list 'erc-modules 'notifications)
+  (load "~/.spacemacs.d/scripts.el")
+  (setq custom-file "~/.emacs-custom.el")
+  (load custom-file t)
   (eval-after-load "erc"
     '(add-to-list 'erc-modules 'notifications))
   (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -347,46 +312,4 @@ you should place your code here."
   (global-set-key "\C-cd" 'zeal-at-point)
   (add-hook 'js2-mode-hook 'electric-spacing-mode)
   (setq evil-escape-key-sequence "kd")
-  (load "~/.emacs.d/private/hacks.el")
-  (setq abbrev-mode 1)
-  (setq abbrev-file-name "~/.emacs.d/private/abbrevs.el")
-  (setq eclim-eclipse-dirs "~/softwares/eclipse-neon"
-        eclim-executable "~/softwares/eclipse-neon/eclim")
-  (setq flycheck-phpcs-standard "Laravel")
   )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(erc-notifications-mode t)
- '(evil-want-Y-yank-to-eol t)
- '(package-selected-packages
-   (quote
-    (helm-gtags ggtags rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby go-guru mmm-mode markdown-toc markdown-mode gh-md yaml-mode insert-shebang hide-comnt helm-purpose window-purpose imenu-list pug-mode helm-git-grep zeal-at-point yapfify xterm-color xkcd ws-butler window-numbering which-key wgrep web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toml-mode toc-org tide tagedit sql-indent spacemacs-theme spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters racer quelpa pyvenv pytest pyenv-mode py-isort pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text magit-gitflow macrostep lua-mode lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc jade-mode ivy-hydra intero info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio go-eldoc gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ flyspell-correct-ivy flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-haskell flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks emmet-mode elisp-slime-nav elfeed-web elfeed-org elfeed-goodies electric-spacing dumb-jump disaster diff-hl define-word cython-mode counsel-projectile company-web company-tern company-statistics company-shell company-go company-ghci company-ghc company-emacs-eclim company-cabal company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format cargo auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(safe-local-variable-values
-   (quote
-    ((eval web-mode-use-tabs)
-     (eval setq flycheck-phpmd-rulesets
-           (expand-file-name "rules.xml"
-                             (let
-                                 ((d
-                                   (dir-locals-find-file ".")))
-                               (if
-                                   (stringp d)
-                                   d
-                                 (car d)))))
-     (flycheck-phpcs-standard . CodeIgniter)
-     (js2-basic-offset . 2)
-     (php-auto-yasnippet-required-files list "~/sybrisco/muwasalaty/laravel-app/app/vendor/autoload.php")
-     (flycheck-phpcs-standard . Laravel)
-     (flycheck-checker . javascript-eslint)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
