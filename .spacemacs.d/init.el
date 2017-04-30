@@ -47,6 +47,7 @@ values."
      php
      python
      (ruby :variables ruby-version-manager 'rvm)
+     ruby-on-rails
      rust
      shell
      shell-scripts
@@ -66,6 +67,7 @@ values."
    '(
      zeal-at-point
      electric-spacing
+     all-the-icons
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
@@ -288,6 +290,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
     web-mode-markup-indent-offset 2
     web-mode-code-indent-offset 2
     web-mode-css-indent-offset 2
+    ;; neo-theme
+    neo-theme (if (display-graphic-p) 'icons 'arrow)
     ))
 
 (defun dotspacemacs/user-config ()
@@ -312,4 +316,5 @@ you should place your code here."
   (global-set-key "\C-cd" 'zeal-at-point)
   (add-hook 'js2-mode-hook 'electric-spacing-mode)
   (setq evil-escape-key-sequence "kd")
+  (global-set-key (kbd "C-c n") 'neo-global--select-window)
   )
