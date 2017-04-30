@@ -46,7 +46,7 @@ values."
      org
      php
      python
-     ruby
+     (ruby :variables ruby-version-manager 'rvm)
      rust
      shell
      shell-scripts
