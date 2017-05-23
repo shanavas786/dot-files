@@ -29,6 +29,7 @@ values."
      auto-completion
      c-c++
      elfeed
+     csv
      emacs-lisp
      (erc :variables
           erc-server-list
