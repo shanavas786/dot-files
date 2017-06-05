@@ -320,4 +320,5 @@ you should place your code here."
   (add-hook 'js2-mode-hook 'electric-spacing-mode)
   (setq evil-escape-key-sequence "kd")
   (global-set-key (kbd "C-c n") 'neo-global--select-window)
+  (define-coding-system-alias 'UTF-8 'utf-8)
   )
