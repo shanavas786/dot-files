@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ef.
+# key: ef.
+# --
+else if object.is_$1() {
+    Q$1
+}$0
