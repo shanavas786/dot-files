@@ -46,6 +46,7 @@ values."
        javascript
        latex
        markdown
+       nginx
        org
        php
        python
