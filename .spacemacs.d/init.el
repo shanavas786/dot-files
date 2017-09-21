@@ -70,7 +70,6 @@ values."
     ;; configuration in `dotspacemacs/user-config'.
     dotspacemacs-additional-packages
     '(
-       editorconfig
        zeal-at-point
        electric-spacing
        all-the-icons
@@ -325,5 +324,4 @@ you should place your code here."
   (setq evil-escape-key-sequence "kd")
   (global-set-key (kbd "C-c n") 'neo-global--select-window)
   (define-coding-system-alias 'UTF-8 'utf-8)
-  (global-set-key (kbd "C-c i") 'string-inflection-ruby-style-cycle)
-  (editorconfig-mode 1))
+  (global-set-key (kbd "C-c i") 'string-inflection-ruby-style-cycle))
