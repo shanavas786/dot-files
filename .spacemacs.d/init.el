@@ -33,6 +33,7 @@ values."
        elfeed
        csv
        emacs-lisp
+       parinfer
        (erc :variables
          erc-server-list
          '(("irc.freenode.net"
@@ -52,6 +53,7 @@ values."
        nginx
        org
        php
+       pass
        python
        (ruby :variables ruby-version-manager 'rvm)
        ruby-on-rails
