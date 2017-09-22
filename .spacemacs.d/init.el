@@ -26,7 +26,9 @@ values."
        ;; better-defaults
        ansible
        graphviz
-       auto-completion
+       (auto-completion :variables
+         auto-completion-enable-snippets-in-popup t
+         auto-completion-enable-help-tooltip t)
        c-c++
        elfeed
        csv
