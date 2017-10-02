@@ -77,7 +77,6 @@ values."
        zeal-at-point
        electric-spacing
        all-the-icons
-       string-inflection
        )
     ;; A list of packages and/or extensions that will not be install and loaded.
     dotspacemacs-excluded-packages
@@ -327,5 +326,4 @@ you should place your code here."
   (add-hook 'js2-mode-hook 'electric-spacing-mode)
   (setq evil-escape-key-sequence "kd")
   (global-set-key (kbd "C-c n") 'neo-global--select-window)
-  (define-coding-system-alias 'UTF-8 'utf-8)
-  (global-set-key (kbd "C-c i") 'string-inflection-ruby-style-cycle))
+  (define-coding-system-alias 'UTF-8 'utf-8))
