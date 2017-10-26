@@ -317,10 +317,8 @@ you should place your code here."
   (eval-after-load "erc"
     '(add-to-list 'erc-modules 'notifications))
   (global-set-key (kbd "C-h") 'delete-backward-char)
-  (global-set-key (kbd "C-c m") 'goto-match-paren)
   (global-hl-line-mode -1)
   (add-hook 'post-self-insert-hook 'my-dwim)
-  (global-set-key (kbd "C-c a") 'conf-align-assignments)
   (global-set-key (kbd "<C-return>") (kbd "C-e C-m"))
   (global-set-key "\C-cd" 'zeal-at-point)
   (add-hook 'js2-mode-hook 'electric-spacing-mode)

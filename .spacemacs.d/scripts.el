@@ -23,13 +23,5 @@
       (delete-char -1)
       (insert "this->")))))
 
-(defun goto-match-paren ()
-  "Go to the matching  if on (){}[], similar to vi style of %."
-  (interactive)
-  ;; first, check for "outside of bracket" positions expected by forward-sexp, etc
-  (cond ((looking-at "[\[\(\{]") (forward-sexp))
-        ((looking-back "[\]\)\}]" 1) (backward-sexp))
-        ;; now, try to succeed from inside of a bracket
-        ((looking-at "[\]\)\}]") (forward-char) (backward-sexp))
-        ((looking-back "[\[\(\{]" 1) (backward-char) (forward-sexp))
-        (t nil)))
+;; rustfmt-nightly fails without it
+(setenv "LD_LIBRARY_PATH" (concat (replace-regexp-in-string "\n" "" (shell-command-to-string "rustc --print sysroot")) "/" "lib"))
