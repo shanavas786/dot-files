@@ -33,7 +33,7 @@ values."
        elfeed
        csv
        emacs-lisp
-       parinfer
+       ;; parinfer
        (erc :variables
          erc-server-list
          '(("irc.freenode.net"
@@ -66,8 +66,8 @@ values."
        typescript
        version-control
        xkcd
-       yaml
-       )
+       yaml)
+
     ;; List of additional packages that will be installed without being
     ;; wrapped in a layer. If you need some configuration for these
     ;; packages, then consider creating a layer. You can also put the
@@ -76,13 +76,13 @@ values."
     '(
        zeal-at-point
        electric-spacing
-       all-the-icons
-       )
+       all-the-icons)
+
     ;; A list of packages and/or extensions that will not be install and loaded.
     dotspacemacs-excluded-packages
     '(
-       drupal-mode
-       )
+       drupal-mode)
+
     ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
     ;; are declared in a layer which is not a member of
     ;; the list `dotspacemacs-configuration-layers'. (default t)
