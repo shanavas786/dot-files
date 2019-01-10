@@ -1,6 +1,7 @@
 [user]
 	name = Shanavas M
 	email = shanavas.m2@gmail.com
+	signingkey = 768A92E1A6A50D72
 [transfer]
 	fsckObjects = false
 [fsck]
