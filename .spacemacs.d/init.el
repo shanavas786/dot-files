@@ -24,7 +24,6 @@ values."
        ;; <M-m f e R> (Emacs style) to install them.
        ;; ----------------------------------------------------------------
        ;; better-defaults
-       ansible
        graphviz
        (auto-completion :variables
          auto-completion-enable-snippets-in-popup t
@@ -39,31 +38,35 @@ values."
          '(("irc.freenode.net"
              :port "6667"
              :ssl nil
-             :nick "shanavas")))
+             :nick "shanavas")
+            ("irc.mozilla.org"
+              :port "6697"
+              :ssl t
+              :nick "shanavas")))
        git
        gtags
-       haskell
        helm
        html
        java
        javascript
-       kotlin
        latex
        markdown
        nginx
        org
-       php
        pass
-       python
+       (python :variables
+         python-backend 'lsp
+         python-enable-yapf-format-on-save t
+         python-sort-imports-on-save t)
        (ruby :variables ruby-version-manager 'rvm)
        ruby-on-rails
        rust
+       semantic
        shell
        shell-scripts
        spell-checking
        sql
        syntax-checking
-       typescript
        version-control
        xkcd
        yaml)
@@ -147,8 +150,8 @@ values."
     ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
     ;; size to make separators look not too crappy.
     ;; (set-frame-font  "Source Code Pro for Powerline-13")
-    dotspacemacs-default-font '("Source Code Pro" ;;"Inconsolata"
-                                 :size 17
+    dotspacemacs-default-font '("Hack" ;;"Inconsolata"
+                                 :size 18
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.2)
@@ -290,12 +293,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
     js2-additional-externs '("describe" "expect" "before" "beforeEach" "after" "afterEach" "it" "angular")
     ;; elfeed cofiguration files
     ;; rmh-elfeed-org-files (list "~/org/feeds.org")
-    ;; python offset
-    python-indent-offset 2
-    ;; css offset
-    css-indent-offset 2
-    ;; js-mode indentation
-    js-indent-level 2
     ;; web-mode indentations
     web-mode-markup-indent-offset 2
     web-mode-code-indent-offset 2
@@ -320,7 +317,5 @@ you should place your code here."
   (add-hook 'post-self-insert-hook 'my-dwim)
   (global-set-key (kbd "<C-return>") (kbd "C-e C-m"))
   (global-set-key "\C-cd" 'zeal-at-point)
-  (add-hook 'js2-mode-hook 'electric-spacing-mode)
-  (setq evil-escape-key-sequence "kd")
   (global-set-key (kbd "C-c n") 'neo-global--select-window)
   (define-coding-system-alias 'UTF-8 'utf-8))
