@@ -14,7 +14,7 @@
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
-       company           ; the ultimate code completion backend
+       (company +auto)          ; the ultimate code completion backend
        (helm +fuzzy)     ; the *other* search engine for love and life
        ;;ido              ; the other *other* search engine...
        ;;ivy              ; a search engine for love and life
@@ -23,6 +23,7 @@
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
+       modeline          ; a snazzy Atom-inspired mode-line
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        evil-goggles      ; display visual hints when editing in evil
        fci               ; a `fill-column' indicator
@@ -91,14 +92,14 @@
        ;;erlang            ; an elegant language for a more civilized age
        ;;elixir            ; erlang done right
        ;;elm               ; care for a cup of TEA?
-       emacs-lisp        ; drown in parentheses
+       emacs-lisp       ; drown in parentheses
        ;;ess               ; emacs speaks statistics
        ;;go                ; the hipster dialect
        ;;(haskell +intero) ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
-       javascript        ; all(hope(abandon(ye(who(enter(here))))))
+       javascript          ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;ledger            ; an accounting system in Emacs

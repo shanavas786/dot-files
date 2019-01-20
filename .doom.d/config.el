@@ -31,6 +31,12 @@
 
 (setq display-line-numbers-type 'relative)
 
+(setq-hook! 'rust-mode-hook fill-column 120)
+
+(setq-hook! 'python-mode-hook
+  fill-column 99
+  python-shell-interpreter "/usr/bin/python3")
+
 (setq racer-rust-src-dir "~/foss/rust/")
 
 (load! "bindings")
