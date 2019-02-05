@@ -21,7 +21,9 @@
 
 (setq doom-font (font-spec :family "Hack" :size 15)
       doom-unicode-font (font-spec :family "Hack" :size 15)
-      doom-big-font (font-spec :family "Hack" :size 15))
+      doom-big-font (font-spec :family "Hack" :size 15)
+      python-shell-interpreter "python3"
+      flycheck-python-flake8-executable "python3")
 
                                         ; deletes trailing whitespaces on every line upon saving files
 (add-hook! 'before-save-hook 'delete-trailing-whitespace)
@@ -31,12 +33,17 @@
 
 (setq display-line-numbers-type 'relative)
 
-(setq-hook! 'rust-mode-hook fill-column 120)
+(setq flycheck-global-modes '(not rust-mode))
+
+;; (eval-after-load "flycheck"
+;;   '(add-to-list 'flycheck-disabled-checkers 'rust-cargo))
+
+(setq-hook! 'rust-mode-hook
+  fill-column 120)
 
 (setq-hook! 'python-mode-hook
-  fill-column 99
-  python-shell-interpreter "/usr/bin/python3")
+  fill-column 99)
 
-(setq racer-rust-src-dir "~/foss/rust/")
+(setq racer-rust-src-path "~/foss/rust/src/")
 
 (load! "bindings")
