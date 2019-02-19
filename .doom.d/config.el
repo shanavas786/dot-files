@@ -25,6 +25,11 @@
       python-shell-interpreter "python3"
       flycheck-python-flake8-executable "python3")
 
+(setq package-archives
+      '(("gnu"   . "http://mirrors.163.com/elpa/")
+        ("melpa" . "https://melpa.org/packages/")
+        ("org"   . "https://orgmode.org/elpa/")))
+
                                         ; deletes trailing whitespaces on every line upon saving files
 (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
