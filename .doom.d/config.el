@@ -5,12 +5,12 @@
 (setq user-mail-address "shanavas.m2@gmail.com"
       user-full-name "Shanavas M")
 
-(set-irc-server! "irc.mozilla.org"
-                 `(:use-tls t
-                            :nick "shanavas"
-                            :sasl-username "shanavas"
-                            :channels ("#emacs")))
-
+(set-irc-server! "irc.freenode.net"
+                 `(:tls t
+                        :nick "shanavas"
+                        :port 6697
+                        :sasl-username "shanavas"
+                        :channels ("#emacs")))
 (map! :leader
       (:prefix "o"
         :desc "IRC"  "I" #'=irc))
