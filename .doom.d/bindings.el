@@ -9,7 +9,12 @@
 
 (map! (:when (featurep! :feature evil)
         :m "gl"    #'avy-goto-line
-        :i "C->"    #'scroll-up-command
-        :i "C-<"    #'scroll-down-command
+        :i "C->"   #'scroll-up-command
+        :i "C-<"   #'scroll-down-command
         :n "g>"    #'scroll-up-command
-        :n "g<"    #'scroll-down-command))
+        :n "g<"    #'scroll-down-command
+        :i "C-h"   #'delete-backward-char)
+
+      (define-key! :keymaps +default-minibuffer-maps
+        "C-w"    #'backward-kill-word
+        "C-h"    #'delete-backward-char))
