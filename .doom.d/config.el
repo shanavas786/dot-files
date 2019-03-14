@@ -30,7 +30,7 @@
         ("melpa" . "https://melpa.org/packages/")
         ("org"   . "https://orgmode.org/elpa/")))
 
-                                        ; deletes trailing whitespaces on every line upon saving files
+; deletes trailing whitespaces on every line upon saving files
 (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -38,10 +38,7 @@
 
 (setq display-line-numbers-type 'relative)
 
-(setq flycheck-global-modes '(not rust-mode))
-
-;; (eval-after-load "flycheck"
-;;   '(add-to-list 'flycheck-disabled-checkers 'rust-cargo))
+;; (setq flycheck-global-modes '(not rust-mode))
 
 (setq-hook! 'rust-mode-hook
   fill-column 120)
@@ -50,5 +47,8 @@
   fill-column 99)
 
 (setq racer-rust-src-path "~/foss/rust/src/")
+
+(setq rtags-rc-binary-name "rtags-rc"
+      rtags-rdm-binary-name "rtags-rdm")
 
 (load! "bindings")
