@@ -13,8 +13,19 @@
         :i "C-<"   #'scroll-down-command
         :n "g>"    #'scroll-up-command
         :n "g<"    #'scroll-down-command
-        :i "C-h"   #'delete-backward-char)
+        :i "C-h"   #'delete-backward-char))
 
-      (define-key! :keymaps +default-minibuffer-maps
-        "C-w"    #'backward-kill-word
-        "C-h"    #'delete-backward-char))
+;      (general-def :keymaps +default-minibuffer-maps
+;       "C-w"    #'backward-kill-word
+;       "C-h"    #'delete-backward-char))
+;
+
+(after! rust-mode
+  (define-key rust-mode-map (kbd "SPC") (λ! (insert-char ?_)))
+  (define-key rust-mode-map (kbd "S-SPC") (λ! (insert-char ? ))))
+
+(after! cc-mode
+  (define-key c-mode-map (kbd "SPC") (λ! (insert-char ?_)))
+  (define-key c-mode-map (kbd "S-SPC") (λ! (insert-char ? )))
+  (define-key c++-mode-map (kbd "SPC") (λ! (insert-char ?_)))
+  (define-key c++-mode-map (kbd "S-SPC") (λ! (insert-char ? ))))
