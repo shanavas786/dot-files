@@ -20,12 +20,8 @@
 ;       "C-h"    #'delete-backward-char))
 ;
 
-(after! rust-mode
-  (define-key rust-mode-map (kbd "SPC") (λ! (insert-char ?_)))
-  (define-key rust-mode-map (kbd "S-SPC") (λ! (insert-char ? ))))
 
-(after! cc-mode
-  (define-key c-mode-map (kbd "SPC") (λ! (insert-char ?_)))
-  (define-key c-mode-map (kbd "S-SPC") (λ! (insert-char ? )))
-  (define-key c++-mode-map (kbd "SPC") (λ! (insert-char ?_)))
-  (define-key c++-mode-map (kbd "S-SPC") (λ! (insert-char ? ))))
+(map! :map (list python-mode-map rust-mode-map
+                 c-mode-map c++-mode-map)
+      "SPC" (λ! (insert-char ?_))
+      "S-SPC" (λ! (insert-char ? )))
