@@ -20,8 +20,9 @@
 ;       "C-h"    #'delete-backward-char))
 ;
 
-
 (map! :map (list python-mode-map rust-mode-map
                  c-mode-map c++-mode-map)
-      "SPC" (λ! (insert-char ?_))
+      "SPC" (λ! (if (is-alpha (preceding-char))
+                    (insert-char ?_)
+                  (insert-char ? )))
       "S-SPC" (λ! (insert-char ? )))

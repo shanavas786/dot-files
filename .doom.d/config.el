@@ -51,4 +51,8 @@
 (setq rtags-rc-binary-name "rtags-rc"
       rtags-rdm-binary-name "rtags-rdm")
 
+(defun is-alpha (char)
+  (memq (get-char-code-property char 'general-category)
+      '(Ll Lu Lo Lt Lm Mn Mc Me Nl)))
+
 (load! "bindings")
