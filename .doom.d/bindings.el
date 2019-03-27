@@ -20,9 +20,18 @@
 ;       "C-h"    #'delete-backward-char))
 ;
 
-(map! :map (list python-mode-map rust-mode-map
-                 c-mode-map c++-mode-map)
+(map! :map (list c-mode-map c++-mode-map)
       "SPC" (λ! (if (is-alpha (preceding-char))
                     (insert-char ?_)
                   (insert-char ? )))
+      "S-SPC" (λ! (insert-char ? )))
+
+(load! "dwim" doom-private-dir t)
+
+(map! :map python-mode-map
+      "SPC" (λ! (python-space-dwim))
+      "S-SPC" (λ! (insert-char ? )))
+
+(map! :map rust-mode-map
+      "SPC" (λ! (rust-space-dwim))
       "S-SPC" (λ! (insert-char ? )))
