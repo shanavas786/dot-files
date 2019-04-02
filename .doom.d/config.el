@@ -23,7 +23,8 @@
       doom-unicode-font (font-spec :family "Hack" :size 15)
       doom-big-font (font-spec :family "Hack" :size 15)
       python-shell-interpreter "python3"
-      flycheck-python-flake8-executable "python3")
+      flycheck-python-flake8-executable "python3"
+      doom-projectile-fd-binary "fdfind")
 
 (setq package-archives
       '(("gnu"   . "http://mirrors.163.com/elpa/")
