@@ -7,7 +7,7 @@
         :desc "Lookup documentation at point"   :n "d" #'racer-describe
         :desc "Jump to definition at point"     :n "l" #'racer-find-definition))
 
-(map! (:when (featurep! :feature evil)
+(map! (:when (featurep! :editor evil)
         :m "gl"    #'avy-goto-line
         :i "C->"   #'scroll-up-command
         :i "C-<"   #'scroll-down-command
