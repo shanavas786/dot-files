@@ -18,7 +18,7 @@
 
 (defconst rust-dwim-keywords
   '("as" "async"
-    "box" "break"
+    "bool" "box" "break"
     "const" "continue" "crate"
     "do" "dyn"
     "else" "enum" "extern"
@@ -30,7 +30,7 @@
     "ref" "return"
     "self" "static" "struct" "super"
     "true" "trait" "type" "try"
-    "use"
+    "use" "unsafe"
     "virtual"
     "where" "while"
     "yield"))
@@ -43,14 +43,20 @@
     (let ((word (python-eldoc--get-symbol-at-point)))
       (if (and word
                (not (member word python-dwim-non-fn-keywords))
+               (not (python-syntax-comment-or-string-p))
                (is-alpha (preceding-char)))
           (insert-char ?_)
         (insert-char ? ))))
-
 
 (defun rust-space-dwim ()
   (if (and (not (rust-in-str-or-cmnt))
            (rust-looking-back-ident)
            (not (rust-looking-back-symbols rust-dwim-keywords)))
+      (insert-char ?_)
+    (insert-char ? )))
+
+(defun cc-space-dwim ()
+  (if (and (c-on-identifier)
+           (not (c-in-literal)))
       (insert-char ?_)
     (insert-char ? )))
