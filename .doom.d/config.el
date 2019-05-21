@@ -19,12 +19,13 @@
 (setq require-final-newline t)
 (setq delete-trailing-lines t)
 
-(setq doom-font (font-spec :family "Hack" :size 15)
-      doom-unicode-font (font-spec :family "Hack" :size 15)
-      doom-big-font (font-spec :family "Hack" :size 15)
+(setq doom-font (font-spec :family "Hack" :size 14)
+      doom-unicode-font (font-spec :family "Hack" :size 14)
+      doom-big-font (font-spec :family "Hack" :size 14)
       python-shell-interpreter "python3"
       flycheck-python-flake8-executable "python3"
-      doom-projectile-fd-binary "fdfind")
+      doom-projectile-fd-binary "fdfind"
+      doom-theme 'doom-tomorrow-night)
 
 (setq package-archives
       '(("gnu"   . "http://mirrors.163.com/elpa/")
@@ -51,5 +52,6 @@
 
 (setq rtags-rc-binary-name "rtags-rc"
       rtags-rdm-binary-name "rtags-rdm")
+
 
 (load! "bindings")

@@ -24,7 +24,8 @@
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       ;;pretty-code       ; replace bits of code with pretty symbols
+       ;;(pretty-code +iosevka)       ; replace bits of code with pretty symbols
+       (pretty-code +fira)       ; replace bits of code with pretty symbols
        ;;tabbar            ; FIXME an (incomplete) tab bar for Emacs
        unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
@@ -33,7 +34,8 @@
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :editor
-       (format +onsave)  ; automated prettiness
+       ;;(format +onsave)  ; automated prettiness
+       format
        ;;lispy             ; vim for lisp, for people who dont like vim
        multiple-cursors  ; editing in many places at once
        ;;parinfer          ; turn lisp into python, sort of
@@ -50,7 +52,7 @@
         )
        electric          ; smarter, keyword-based electric-indent
        ;;eshell            ; a consistent, cross-platform shell (WIP)
-       imenu             ; an imenu sidebar and searchable code index
+       ;; imenu             ; an imenu sidebar and searchable code index
        ;;term              ; terminals in Emacs
        vc                ; version-control and Emacs, sitting in a tree
 
