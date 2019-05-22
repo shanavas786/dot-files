@@ -15,9 +15,11 @@
       (:prefix "o"
         :desc "IRC"  "I" #'=irc))
 
-                                        ; exactly one newline at the end of every file, unconditionally
-(setq require-final-newline t)
-(setq delete-trailing-lines t)
+; exactly one newline at the end of every file, unconditionally
+(setq delete-trailing-lines t
+      global-auto-revert-mode t
+      require-final-newline t
+      display-line-numbers-type 'relative)
 
 (setq doom-font (font-spec :family "Hack" :size 14)
       doom-unicode-font (font-spec :family "Hack" :size 14)
@@ -37,8 +39,6 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-
-(setq display-line-numbers-type 'relative)
 
 ;; (setq flycheck-global-modes '(not rust-mode))
 
