@@ -32,9 +32,15 @@ function fish_prompt
    set_color green
    printf '%s ' (__fish_git_prompt)
    set_color red
-   echo -n '| '
+   echo -n '❯ '
    set_color normal
 end
 
 # no more geeting
 set fish_greeting
+
+
+# start tmux
+if status --is-interactive
+   tmux -u ^ /dev/null; and exec true
+end
