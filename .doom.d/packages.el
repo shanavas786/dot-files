@@ -10,3 +10,7 @@
                     :repo "hlissner/emacs-snippets"
                     :files ("*")))
 
+;; disable current line hightlighting
+(package! hl-line :disable t)
+
+(package! color-theme-sanityinc-tomorrow)
