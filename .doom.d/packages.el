@@ -14,3 +14,5 @@
 (package! hl-line :disable t)
 
 (package! color-theme-sanityinc-tomorrow)
+
+(package! electric-operator)
