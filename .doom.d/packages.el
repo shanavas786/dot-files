@@ -16,3 +16,5 @@
 (package! color-theme-sanityinc-tomorrow)
 
 (package! electric-operator)
+
+(package! restclient)
