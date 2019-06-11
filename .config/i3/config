@@ -177,10 +177,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # default workspace for apps
-assign [class="(?i)chromium"]    → $w1
-assign [class="(?i)firefox-esr"] → $w1
-assign [class="(?i)skype"]       → $w1
-assign [class="Emacs"]           → $w2
+assign [class="(?i)chromium"]    → $ws1
+assign [class="(?i)firefox-esr"] → $ws1
+assign [class="(?i)skype"]       → $ws1
+assign [class="Emacs"]           → $ws2
 
 # screenshot
 bindsym Print exec gnome-screenshot -i
@@ -198,6 +198,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -c backlight s +1
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -c backlight s 10%-
 
 bindsym $mod+x exec $HOME/.config/i3/lock.sh
+bindsym $mod+c exec zenity --calendar
 
 for_window [class="Workrave"] border none
 for_window [class="Workrave"] floating enable
