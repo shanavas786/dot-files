@@ -5,16 +5,6 @@
 (setq user-mail-address "shanavas.m2@gmail.com"
       user-full-name "Shanavas M")
 
-(set-irc-server! "irc.freenode.net"
-                 `(:tls t
-                        :nick "shanavas"
-                        :port 6697
-                        :sasl-username "shanavas"
-                        :channels ("#emacs")))
-(map! :leader
-      (:prefix "o"
-        :desc "IRC"  "I" #'=irc))
-
 ; exactly one newline at the end of every file, unconditionally
 (setq delete-trailing-lines t
       global-auto-revert-mode t
@@ -29,11 +19,17 @@
       doom-unicode-font (font-spec :family "Hack" :size 14)
       doom-big-font (font-spec :family "Hack" :size 14)
       doom-projectile-fd-binary "fdfind"
-      doom-modeline-height 15
+      doom-modeline-height 10
       doom-theme 'sanityinc-tomorrow-bright
       doom-buffer-hl-line-mode nil
       python-shell-interpreter "python3"
-      flycheck-python-flake8-executable "python3")
+      flycheck-python-flake8-executable "python3"
+      racer-rust-src-path "~/foss/rust/src/"
+      ;; for debian
+      rtags-rc-binary-name "rtags-rc"
+      rtags-rdm-binary-name "rtags-rdm"
+      org-log-done 'time)
+
 
 (setq package-archives
       '(("gnu"   . "http://mirrors.163.com/elpa/")
@@ -54,11 +50,6 @@
 
 (setq-hook! 'python-mode-hook
   fill-column 99)
-
-(setq racer-rust-src-path "~/foss/rust/src/")
-
-(setq rtags-rc-binary-name "rtags-rc"
-      rtags-rdm-binary-name "rtags-rdm")
 
 
 (load! "bindings")
