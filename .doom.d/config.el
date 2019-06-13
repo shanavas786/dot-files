@@ -28,6 +28,7 @@
       ;; for debian
       rtags-rc-binary-name "rtags-rc"
       rtags-rdm-binary-name "rtags-rdm"
+      erc-kill-server-buffer-on-quit t
       org-log-done 'time)
 
 

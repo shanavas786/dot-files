@@ -7,6 +7,17 @@
         :desc "Lookup documentation at point"   :n "d" #'racer-describe
         :desc "Jump to definition at point"     :n "l" #'racer-find-definition))
 
+(map! :leader
+      (:prefix "o"
+       :desc "ERC"  "i" #'erc-tls))
+
+(map! :map erc-mode-map
+        :localleader
+        :prefix "e"
+        :desc "switch to"  "b" (λ! (erc-switch-to-buffer))
+        :desc "quit"        "q" (λ! (erc-quit-server "quit"))
+        :desc "set topic"   "t" (λ! (erc-set-topic)))
+
 (map! (:when (featurep! :editor evil)
         :m "gl"    #'avy-goto-line
         :i "C->"   #'scroll-up-command
