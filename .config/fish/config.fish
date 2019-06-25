@@ -1,4 +1,6 @@
 set PATH $HOME/.cargo/bin $PATH
+set CDPATH . $HOME/nrm $CDPATH $HOME/foss $CDPATH
+
 
 if command -v exa > /dev/null
    abbr -a l 'exa'
