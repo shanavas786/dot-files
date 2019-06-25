@@ -203,6 +203,8 @@ bindsym $mod+c exec zenity --calendar
 for_window [class="Workrave"] border none
 for_window [class="Workrave"] floating enable
 
+exec "setxkbmap -option 'grp:alt_shift_toggle' -layout us,in -variant ,mal_enhanced"
+
 # swap caps lock and escape
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
