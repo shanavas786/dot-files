@@ -1,0 +1,8 @@
+---
+Language:        Cpp
+BasedOnStyle:  LLVM
+ColumnLimit:     80
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+IndentWidth: 4
+...
