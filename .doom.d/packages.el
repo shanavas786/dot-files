@@ -18,3 +18,5 @@
 (package! electric-operator)
 
 (package! restclient)
+
+(package! py-isort)

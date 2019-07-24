@@ -46,6 +46,15 @@
 
 ;; (setq flycheck-global-modes '(not rust-mode))
 
+(def-package! py-isort
+  :after python
+  :config
+  (map! :map python-mode-map
+        :localleader
+        (:prefix ("s" . "sort")
+          :desc "Sort imports" "s" #'py-isort-buffer)))
+
+
 (setq-hook! 'rust-mode-hook
   fill-column 120)
 
