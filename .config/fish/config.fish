@@ -13,6 +13,14 @@ else
    abbr -a lll 'ls -la'
 end
 
+if command -v git > /dev/null
+   abbr -a gco git checkout
+   abbr -a gc git commit
+   abbr -a ga git add
+   abbr -a gd git diff
+   abbr -a gds git diff --cached
+end
+
 
 # Fish git prompt
 set __fish_git_prompt_showuntrackedfiles 'yes'
