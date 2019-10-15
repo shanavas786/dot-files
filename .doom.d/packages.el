@@ -6,7 +6,7 @@
 ;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
 (package! emacs-snippets
-  :recipe (:fetcher github
+  :recipe (:host github
                     :repo "hlissner/emacs-snippets"
                     :files ("*")))
 

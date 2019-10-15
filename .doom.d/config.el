@@ -15,9 +15,9 @@
 (require 'color-theme-sanityinc-tomorrow)
 ;; (color-theme-sanityinc-tomorrow-bright)
 
-(setq doom-font (font-spec :family "Hack" :size 14)
-      doom-unicode-font (font-spec :family "Hack" :size 14)
-      doom-big-font (font-spec :family "Hack" :size 14)
+(setq doom-font (font-spec :family "Hack" :size 15)
+      doom-unicode-font (font-spec :family "Hack" :size 15)
+      doom-big-font (font-spec :family "Hack" :size 15)
       doom-projectile-fd-binary "fdfind"
       doom-modeline-height 10
       doom-theme 'sanityinc-tomorrow-bright
@@ -41,6 +41,8 @@
 (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 (add-hook! 'python-mode-hook #'electric-operator-mode)
 (add-hook! 'rust-mode-hook #'electric-operator-mode)
+(add-hook! 'rust-mode-hook #'electric-operator-mode)
+(add-hook! 'c-mode-hook #'electric-operator-mode)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
