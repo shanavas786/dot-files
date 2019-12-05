@@ -36,6 +36,9 @@ tray-position = right
 tray-padding = 2
 tray-maxsize = 24
 
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
 [global/wm]
 margin-top = 0
 
@@ -46,8 +49,8 @@ label = %title:0:30:...%
 [module/ewmh]
 type = internal/xworkspaces
 pin-workspaces = false
-enable-click = false
-enable-scroll = false
+enable-click = true
+enable-scroll = true
 
 label-active = " %name% "
 label-active-underline = #fba922

@@ -147,7 +147,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -177,10 +177,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # default workspace for apps
-assign [class="(?i)chromium"]    → $ws1
+assign [class="Emacs"]           → $ws1
 assign [class="(?i)firefox-esr"] → $ws1
-assign [class="(?i)skype"]       → $ws1
-assign [class="Emacs"]           → $ws2
+assign [class="(?i)skype"]       → $ws2
+assign [class="(?i)chromium"]    → $ws2
 
 # screenshot
 bindsym Print exec gnome-screenshot -i
@@ -202,13 +202,12 @@ bindsym $mod+c exec zenity --calendar
 
 for_window [class="Workrave"] border none
 for_window [class="Workrave"] floating enable
+for_window [class="SimpleScreenRecorder"] floating enable
 
-exec "setxkbmap -option 'grp:alt_shift_toggle' -layout us,in -variant ,mal_enhanced"
 
-# swap caps lock and escape
-exec_always --no-startup-id xmodmap -e "clear lock"
-exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+exec setxkbmap -option 'grp:alt_shift_toggle' -layout us,in -variant ,mal_enhanced
+
+exec setxkbmap -option 'caps:swapescape'
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
