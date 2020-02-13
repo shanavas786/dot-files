@@ -1,5 +1,5 @@
 set PATH $HOME/.cargo/bin $PATH
-set CDPATH . $HOME/nrm $CDPATH $HOME/foss $CDPATH
+set CDPATH . $HOME/projects $CDPATH $HOME/foss $CDPATH
 
 
 if command -v exa > /dev/null
@@ -14,6 +14,7 @@ else
 end
 
 if command -v git > /dev/null
+   abbr -a g git
    abbr -a gco git checkout
    abbr -a gc git commit
    abbr -a ga git add
@@ -21,6 +22,16 @@ if command -v git > /dev/null
    abbr -a gds git diff --cached
 end
 
+if command -v emacsclient > /dev/null
+   abbr -a vi emacsclient
+   abbr -a e emacsclient
+end
+
+if command -v python3 > /dev/null
+   abbr -a py python3
+end
+
+abbr -a ... '../../'
 
 # Fish git prompt
 set __fish_git_prompt_showuntrackedfiles 'yes'
@@ -49,6 +60,10 @@ end
 # no more geeting
 set fish_greeting
 
+# configure autojump
+if test -e /usr/share/autojump/autojump.fish
+    . /usr/share/autojump/autojump.fish
+end
 
 # start tmux
 if status --is-interactive
