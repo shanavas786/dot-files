@@ -189,6 +189,13 @@ bindsym Print exec gnome-screenshot -i
 bindsym $mod+plus exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
 bindsym $mod+minus exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
 
+# read 1 character and mark the current window with this character
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+
+# read 1 character and go to the window with the character
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+
+
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
