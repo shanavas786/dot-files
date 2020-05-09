@@ -21,6 +21,7 @@
       doom-projectile-fd-binary "fdfind"
       doom-modeline-height 10
       doom-theme 'sanityinc-tomorrow-bright
+      ;doom-theme 'tango
       doom-buffer-hl-line-mode nil
       python-shell-interpreter "python3"
       flycheck-python-flake8-executable "python3"
@@ -48,7 +49,7 @@
 
 ;; (setq flycheck-global-modes '(not rust-mode))
 
-(def-package! py-isort
+(use-package! py-isort
   :after python
   :config
   (map! :map python-mode-map
