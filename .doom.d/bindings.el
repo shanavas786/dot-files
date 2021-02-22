@@ -19,12 +19,19 @@
         :desc "set topic"   "t" (λ! (erc-set-topic)))
 
 (map! (:when (featurep! :editor evil)
-        :m "gl"    #'avy-goto-line
+        :n "gl"    #'avy-goto-line
         :i "C->"   #'scroll-up-command
         :i "C-<"   #'scroll-down-command
         :n "g>"    #'scroll-up-command
         :n "g<"    #'scroll-down-command
-        :i "C-h"   #'delete-backward-char))
+        :i "C-h"   #'delete-backward-char
+        :n "gCs"   #'string-inflection-underscore
+        :n "gCp"   #'string-inflection-pascal-case
+        :n "gCc"   #'string-inflection-camelcase
+        :n "gCu"   #'string-inflection-upcase
+        :n "gCk"   #'string-inflection-kebab-case
+        :n "gCU"   #'string-inflection-capital-underscore
+        ))
 
 ;      (general-def :keymaps +default-minibuffer-maps
 ;       "C-w"    #'backward-kill-word
@@ -45,3 +52,7 @@
 (map! :map rust-mode-map
       "SPC" (λ! (rust-space-dwim))
       "S-SPC" (λ! (insert-char ? )))
+
+(map! :leader
+      (:prefix "o"
+       :desc "ERC"  "i" #'erc-tls))

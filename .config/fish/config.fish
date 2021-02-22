@@ -1,6 +1,9 @@
 set PATH $HOME/.cargo/bin $PATH
 set CDPATH . $HOME/projects $CDPATH $HOME/foss $CDPATH
 
+set -x EDITOR 'emacsclient -t'
+set -x VISUAL 'emacsclient -t'
+set -x ALTERNATE_EDITOR 'vim'
 
 if command -v exa > /dev/null
    abbr -a l 'exa'
@@ -69,3 +72,8 @@ end
 if status --is-interactive
    tmux -u ^ /dev/null; and exec true
 end
+
+set -x JAVA_HOME (readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+
+
+pyenv init - | source

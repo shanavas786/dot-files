@@ -17,6 +17,13 @@
 
 (package! electric-operator)
 
-(package! restclient)
+;;(package! restclient)
 
 (package! py-isort)
+
+(package! graphviz-dot-mode)
+
+(package! elpy)
+
+(package! string-inflection)
+(package! evil-string-inflection)
