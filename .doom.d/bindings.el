@@ -42,10 +42,13 @@
 
 (define-key input-decode-map "\e[1;2A" (kbd "S-SPC"))
 
-(map! :map (list c-mode-map c++-mode-map)
+(map! :map c-mode-map
       "SPC" (λ! (cc-space-dwim))
       "S-SPC" (λ! (insert-char ? )))
 
+(map! :map c++-mode-map
+      "SPC" (λ! (cc-space-dwim))
+      "S-SPC" (λ! (insert-char ? )))
 
 (map! :map python-mode-map
       "SPC" (λ! (python-space-dwim))
