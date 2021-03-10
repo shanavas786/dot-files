@@ -34,6 +34,7 @@
 (setq elpy-rpc-virtualenv-path "/opt/elpyenv")
 (setq elpy-rpc-python-command "python3")
 (setq python-shell-interpreter "/opt/elpyenv/bin/python3")
+(setq python-shell-virtualenv-root  "/opt/elpyenv")
 
 (setq package-archives
       '(("gnu"   . "http://mirrors.163.com/elpa/")
@@ -69,7 +70,6 @@
   fill-column 88)
 
 (use-package elpy
-  :ensure t
   :init
   (elpy-enable))
 
@@ -79,10 +79,9 @@
 
 
 
-
 (load! "bindings")
 
-(setq org-agenda-files (list "~/work/espace/espace.org"))
+(setq org-agenda-files (list "~/work/espace.org"))
 
 (setq diary-file "~/personal/diary")
 

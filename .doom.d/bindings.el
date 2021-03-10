@@ -40,6 +40,8 @@
 
 (load! "dwim" doom-private-dir t)
 
+(define-key input-decode-map "\e[1;2A" (kbd "S-SPC"))
+
 (map! :map (list c-mode-map c++-mode-map)
       "SPC" (λ! (cc-space-dwim))
       "S-SPC" (λ! (insert-char ? )))

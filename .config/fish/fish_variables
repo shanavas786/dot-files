@@ -3,7 +3,7 @@
 SETUVAR --export PYENV_ROOT:/Users/shanavas/\x2epyenv
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__2E_2E_2E_:\x2e\x2e/\x2e\x2e/
-SETUVAR _fish_abbr_e:emacsclient
+SETUVAR _fish_abbr_e:emacsclient\x20\x2dt
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gc:git\x20commit
@@ -14,7 +14,7 @@ SETUVAR _fish_abbr_l:ls
 SETUVAR _fish_abbr_ll:ls\x20\x2dl
 SETUVAR _fish_abbr_lll:ls\x20\x2dla
 SETUVAR _fish_abbr_py:python3
-SETUVAR _fish_abbr_vi:emacsclient
+SETUVAR _fish_abbr_vi:emacsclient\x20\x2dt
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
@@ -43,4 +43,3 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR --export fish_user_paths:/Users/shanavas/\x2epyenv/bin\x1e/Users/shanavas/\x2epyenv/bin\x1e/Users/shanavas/\x2epyenv/bin\x1e/Users/shanavas/\x2epyenv/bin\x1e/Users/shanavas/\x2epyenv/bin\x1e/Users/shanavas/\x2epyenv/bin\x20/Users/shanavas/\x2epyenv/bin\x20/Users/shanavas/\x2epyenv/bin\x20/Users/shanavas/\x2epyenv/bin\x20/home/shanavas/\x2epyenv/bin\x20/home/shanavas/\x2epyenv/bin\x20/home/shanavas/\x2epoetry/bin
