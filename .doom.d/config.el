@@ -25,8 +25,8 @@
       doom-buffer-hl-line-mode nil
       python-shell-interpreter "python3"
       flycheck-python-flake8-executable "python3"
-      projectile-project-search-path '("~/work/")
-      racer-rust-src-path "~/foss/rust/src/"
+      projectile-project-search-path '("/opt/")
+      racer-rust-src-path "~/opt/rust/src/"
       ;; for debian
       rtags-rc-binary-name "rtags-rc"
       rtags-rdm-binary-name "rtags-rdm"
@@ -71,7 +71,6 @@
   fill-column 88)
 
 (use-package elpy
-  :ensure t
   :init
   (elpy-enable))
 
@@ -84,9 +83,9 @@
 
 (load! "bindings")
 
-(setq org-agenda-files (list "~/work/espace/espace.org"))
+(setq org-agenda-files (list "/opt/agenda.org"))
 
-(setq diary-file "~/personal/diary")
+(setq diary-file "/opt/diary")
 
 (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
 (custom-set-variables

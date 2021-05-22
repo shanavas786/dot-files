@@ -1,8 +1,8 @@
-set PATH $HOME/.cargo/bin $PATH
-set CDPATH . $HOME/projects $CDPATH $HOME/foss $CDPATH
+set PATH $HOME/.cargo/bin $HOME/.local/bin $PATH
+set CDPATH . /opt $CDPATH
 
-set -x EDITOR 'emacsclient -t'
-set -x VISUAL 'emacsclient -t'
+set -x EDITOR 'emacsclient -t -c'
+set -x VISUAL 'emacsclient -t -c'
 set -x ALTERNATE_EDITOR 'vim'
 
 if command -v exa > /dev/null
@@ -26,8 +26,8 @@ if command -v git > /dev/null
 end
 
 if command -v emacsclient > /dev/null
-   abbr -a vi emacsclient
-   abbr -a e emacsclient
+   abbr -a vi emacsclient -c
+   abbr -a e emacsclient -c
 end
 
 if command -v python3 > /dev/null
@@ -70,10 +70,17 @@ end
 
 # start tmux
 if status --is-interactive
-   tmux -u ^ /dev/null; and exec true
+   if command -v tmux > /dev/null
+       tmux -u ^ /dev/null; and exec true
+   end
 end
 
 set -x JAVA_HOME (readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 
+set -x ANDROID_HOME /opt/Android/Sdk
 
-pyenv init - | source
+if command -v starship > /dev/null
+  starship init fish | source
+end
+
+# pyenv init - | source
