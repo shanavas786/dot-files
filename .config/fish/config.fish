@@ -69,13 +69,14 @@ if test -e /usr/share/autojump/autojump.fish
 end
 
 # start tmux
-if status --is-interactive
-   if command -v tmux > /dev/null
-       tmux -u ^ /dev/null; and exec true
-   end
-end
+# if status --is-interactive
+#    if command -v tmux > /dev/null
+#        tmux -u ^ /dev/null; and exec true
+#    end
+# end
 
-set -x JAVA_HOME (readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+# set -x JAVA_HOME (readlink -f /home/shanavas/.nix-profile/bin/java | sed "s:/bin/java::")
+set -x JAVA_HOME (readlink -f (which java) | sed "s:/bin/java::")
 
 set -x ANDROID_HOME /opt/Android/Sdk
 
