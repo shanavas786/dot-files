@@ -8,6 +8,7 @@
        (helm +fuzzy)     ; the *other* search engine for love and life
        ;;ido              ; the other *other* search engine...
        ;;ivy              ; a search engine for love and life
+       vertico              ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -16,7 +17,7 @@
        ; modeline          ; a snazzy Atom-inspired mode-line
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        ophints           ; display visual hints when editing in evil
-       fill-column       ; a `fill-column' indicator
+       ;; fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
@@ -99,12 +100,12 @@
        ;;elm               ; care for a cup of TEA?
        emacs-lisp       ; drown in parentheses
        ;;ess               ; emacs speaks statistics
-       ;;go                ; the hipster dialect
+       go                ; the hipster dialect
        ;;(haskell +intero) ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
-       javascript          ; all(hope(abandon(ye(who(enter(here))))))
+       (javascript +lsp)          ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;ledger            ; an accounting system in Emacs

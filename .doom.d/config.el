@@ -79,6 +79,8 @@
     '(elpy-company-backend :with company-files company-yasnippet)))
 
 
+(auto-save-visited-mode +1)
+
 
 
 (load! "bindings")
