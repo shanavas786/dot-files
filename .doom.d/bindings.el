@@ -18,7 +18,7 @@
         :desc "quit"        "q" (λ! (erc-quit-server "quit"))
         :desc "set topic"   "t" (λ! (erc-set-topic)))
 
-(map! (:when (featurep! :editor evil)
+(map! (:when (modulep! :editor evil)
         :n "gl"    #'avy-goto-line
         :i "C->"   #'scroll-up-command
         :i "C-<"   #'scroll-down-command
@@ -38,7 +38,7 @@
 ;       "C-h"    #'delete-backward-char))
 ;
 
-(load! "dwim" doom-private-dir t)
+(load! "dwim" doom-user-dir t)
 
 (map! :map (list c-mode-map c++-mode-map)
       "SPC" (λ! (cc-space-dwim))
@@ -52,7 +52,3 @@
 (map! :map rust-mode-map
       "SPC" (λ! (rust-space-dwim))
       "S-SPC" (λ! (insert-char ? )))
-
-(map! :leader
-      (:prefix "o"
-       :desc "ERC"  "i" #'erc-tls))

@@ -5,7 +5,7 @@
 (setq user-mail-address "shanavas.m2@gmail.com"
       user-full-name "Shanavas M")
 
-                                        ; exactly one newline at the end of every file, unconditionally
+(set-selection-coding-system 'utf-8)
 (setq delete-trailing-lines t
       global-auto-revert-mode t
       require-final-newline t

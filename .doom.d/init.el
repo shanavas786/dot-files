@@ -4,18 +4,17 @@
 
 (doom!
        :completion
-       (company +auto)          ; the ultimate code completion backend
-       (helm +fuzzy)     ; the *other* search engine for love and life
+       (company +tng)          ; the ultimate code completion backend
+       ;; (helm +fuzzy)     ; the *other* search engine for love and life
        ;;ido              ; the other *other* search engine...
-       ;;ivy              ; a search engine for love and life
+       ;; ivy              ; a search engine for love and life
        vertico              ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
-       ; modeline          ; a snazzy Atom-inspired mode-line
-       doom-quit         ; DOOM quit-message prompts when you quit Emacs
+       ;; doom-quit         ; DOOM quit-message prompts when you quit Emacs
        ophints           ; display visual hints when editing in evil
        ;; fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
@@ -68,8 +67,10 @@
        ;;macos             ; MacOS-specific commands
        make                ; run make tasks from Emacs
        magit               ; a git porcelain for Emacs
-       eval              ; run code, run (also, repls)
+       (eval +overlay)     ; run code, run (also, repls)
+       lookup
        lsp
+       tree-sitter       ; syntax and parsing, sitting in a tree...
        ;;password-store    ; password manager for nerds
        ;;pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
