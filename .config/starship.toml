@@ -9,3 +9,6 @@ error_symbol = "[✗](bold red)"
 
 [python]
 symbol = " "
+
+[nix_shell]
+disabled = false
