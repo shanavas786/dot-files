@@ -38,9 +38,7 @@
 ;       "C-h"    #'delete-backward-char))
 ;
 
-(load! "dwim" doom-private-dir t)
-
-(define-key input-decode-map "\e[1;2A" (kbd "S-SPC"))
+(load! "dwim" doom-user-dir t)
 
 (map! :map c-mode-map
       "SPC" (λ! (cc-space-dwim))

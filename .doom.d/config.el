@@ -2,13 +2,15 @@
 
 ;; Place your private configuration here
 
-(setq user-mail-address "shanavas.m2@gmail.com"
+(setq user-mail-address "shanavas.muhammed@espacenetworks.io"
       user-full-name "Shanavas M")
 
-                                        ; exactly one newline at the end of every file, unconditionally
+; exactly one newline at the end of every file, unconditionally
 (setq delete-trailing-lines t
       global-auto-revert-mode t
       require-final-newline t
+      global-display-fill-column-indicator-mode t
+      menu-bar-mode nil
       display-line-numbers-type 'relative)
 
 
@@ -19,13 +21,16 @@
       doom-unicode-font (font-spec :family "Monaco" :size 14)
       doom-big-font (font-spec :family "Monaco" :size 14)
       doom-modeline-height 10
+      doom-modeline-mu4e t
       doom-theme 'sanityinc-tomorrow-bright
+      ;; doom-theme 'doom-solarized-light
       doom-buffer-hl-line-mode nil
       python-shell-interpreter "python3"
       flycheck-python-flake8-executable "python3"
       projectile-project-search-path '("~/work/")
       racer-rust-src-path "~/foss/rust/src/"
       ;; for debian
+      doom-projectile-fd-binary "fd"
       rtags-rc-binary-name "rtags-rc"
       rtags-rdm-binary-name "rtags-rdm"
       erc-kill-server-buffer-on-quit t
@@ -47,6 +52,7 @@
 (add-hook! 'rust-mode-hook #'electric-operator-mode)
 (add-hook! 'rust-mode-hook #'electric-operator-mode)
 (add-hook! 'c-mode-hook #'electric-operator-mode)
+(add-hook! 'elpy-mode-hook #'poetry-tracking-mode)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
