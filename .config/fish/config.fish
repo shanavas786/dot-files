@@ -4,6 +4,7 @@ set CDPATH . /opt $CDPATH
 set -x EDITOR 'emacsclient -t -c'
 set -x VISUAL 'emacsclient -t -c'
 set -x ALTERNATE_EDITOR 'vim'
+set -x DOCKER_HOST unix:///var/run/docker.sock
 
 if command -v exa > /dev/null
    abbr -a l 'exa'
