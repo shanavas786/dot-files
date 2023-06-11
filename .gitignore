@@ -1,0 +1,2 @@
+dot-local/fonts/*
+!dot-local/fonts/*.zip
