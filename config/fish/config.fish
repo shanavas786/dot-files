@@ -77,7 +77,9 @@ end
 # end
 
 # set -x JAVA_HOME (readlink -f /home/shanavas/.nix-profile/bin/java | sed "s:/bin/java::")
-set -x JAVA_HOME (readlink -f (which java) | sed "s:/bin/java::")
+if command -v java
+    set -x JAVA_HOME (readlink -f (which java) | sed "s:/bin/java::")
+end
 
 set -x ANDROID_HOME /opt/Android/Sdk
 
