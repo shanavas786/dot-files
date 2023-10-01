@@ -1,10 +1,17 @@
-set PATH $HOME/.cargo/bin $HOME/.local/bin $PATH
+set PATH $HOME/.cargo/bin $HOME/.local/bin $HOME/.npm-global/bin/ $PATH
+set PATH $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin $HOME/.nix-profile/bin $PATH
 set CDPATH . /opt $CDPATH
 
 set -x EDITOR 'emacsclient -t -c'
 set -x VISUAL 'emacsclient -t -c'
 set -x ALTERNATE_EDITOR 'vim'
 set -x DOCKER_HOST unix:///var/run/docker.sock
+
+set -x DEBEMAIL "shanavas.m@proton.me"
+set -x DEBFULLNAME "Shanavas M"
+set -x DEBOOTSTRAP_DIR "/usr/share/debootstrap"
+
+set -U fish_greeting " 🐟 "
 
 if command -v exa > /dev/null
    abbr -a l 'exa'
@@ -77,7 +84,7 @@ end
 # end
 
 # set -x JAVA_HOME (readlink -f /home/shanavas/.nix-profile/bin/java | sed "s:/bin/java::")
-if command -v java
+if command -v java > /dev/null
     set -x JAVA_HOME (readlink -f (which java) | sed "s:/bin/java::")
 end
 
@@ -87,3 +94,4 @@ if command -v starship > /dev/null
   starship init fish | source
 end
 
+stty intr ^b

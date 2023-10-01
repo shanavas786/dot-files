@@ -33,9 +33,9 @@
       erc-kill-server-buffer-on-quit t
       org-log-done 'time)
 
-(setq elpy-rpc-virtualenv-path "/opt/elpyenv")
-(setq elpy-rpc-python-command "python3")
-(setq python-shell-interpreter "/opt/elpyenv/bin/python3")
+;; (setq elpy-rpc-virtualenv-path "/opt/elpyenv")
+;; (setq elpy-rpc-python-command "python3")
+;; (setq python-shell-interpreter "/opt/elpyenv/bin/python3")
 
 (setq package-archives
       '(("gnu"   . "http://mirrors.163.com/elpa/")
@@ -45,8 +45,8 @@
                                         ; deletes trailing whitespaces on every line upon saving files
 (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 (add-hook! 'python-mode-hook #'electric-operator-mode)
-(add-hook! 'rust-mode-hook #'electric-operator-mode)
-(add-hook! 'rust-mode-hook #'electric-operator-mode)
+;; (add-hook! 'rust-mode-hook #'electric-operator-mode)
+;; (add-hook! 'rust-mode-hook #'electric-operator-mode)
 (add-hook! 'c-mode-hook #'electric-operator-mode)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
