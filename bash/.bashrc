@@ -127,3 +127,11 @@ if command -v starship > /dev/null; then
 fi
 
 stty intr ^b
+
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
+source ~/.local/share/blesh/ble.sh
+
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init bash)"

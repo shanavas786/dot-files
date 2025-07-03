@@ -15,10 +15,10 @@
 (require 'color-theme-sanityinc-tomorrow)
 ;; (color-theme-sanityinc-tomorrow-bright)
 
-(setq doom-font (font-spec :family "Hack" :size 15)
-      doom-unicode-font (font-spec :family "Hack" :size 15)
-      doom-big-font (font-spec :family "Hack" :size 15)
-      doom-projectile-fd-binary "fdfind"
+(setq doom-font (font-spec :family "Hack" :size 25)
+      doom-symbol-font (font-spec :family "Hack" :size 25)
+      doom-big-font (font-spec :family "Hack" :size 25)
+      doom-fd-executable "fdfind"
       doom-modeline-height 10
       doom-theme 'sanityinc-tomorrow-bright
                                         ;doom-theme 'tango
@@ -31,7 +31,9 @@
       rtags-rc-binary-name "rtags-rc"
       rtags-rdm-binary-name "rtags-rdm"
       erc-kill-server-buffer-on-quit t
-      org-log-done 'time)
+      org-log-done 'time
+      ispell-dictionary "en"
+      )
 
 ;; (setq elpy-rpc-virtualenv-path "/opt/elpyenv")
 ;; (setq elpy-rpc-python-command "python3")
@@ -76,7 +78,7 @@
 
 (after! elpy
   (set-company-backend! 'elpy-mode
-    '(elpy-company-backend :with company-files company-yasnippet)))
+                        '(elpy-company-backend :with company-files company-yasnippet)))
 
 
 (auto-save-visited-mode +1)

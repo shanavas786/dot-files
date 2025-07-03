@@ -83,12 +83,12 @@
        ;; +docsets)        ; ...or in Dash docsets locally
 
        :checkers
-       spell               ; tasing you for misspelling mispelling
+       (spell +aspell)               ; tasing you for misspelling mispelling
        syntax              ; tasing you for every semicolon you forget
 
        :lang
        ;;assembly          ; assembly for fun or debugging
-       (cc +irony +rtags); C/C++/Obj-C madness
+       (cc +lsp +tree-sitter); C/C++/Obj-C madness
        ;;(cc +lsp); C/C++/Obj-C madness
        ;;clojure           ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
@@ -105,7 +105,7 @@
        ;;(haskell +intero) ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
-       ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
+       (java +lsp +tree-sitter) ; the poster child for carpal tunnel syndrome
        (javascript +lsp)          ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;latex             ; writing papers in Emacs has never been so fun
@@ -125,7 +125,7 @@
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python +poetry)           ; beautiful is better than ugly
+       (python +lsp)           ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        rest              ; Emacs as a REST client
