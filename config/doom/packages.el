@@ -7,8 +7,8 @@
 ;; (package! builtin-package :disable t)
 (package! emacs-snippets
   :recipe (:host github
-                    :repo "hlissner/emacs-snippets"
-                    :files ("*")))
+           :repo "hlissner/emacs-snippets"
+           :files ("*")))
 
 ;; disable current line hightlighting
 (package! hl-line :disable t)
@@ -23,7 +23,7 @@
 
 (package! graphviz-dot-mode)
 
-(package! elpy)
+;; (package! elpy)
 
 (package! string-inflection)
 (package! evil-string-inflection)

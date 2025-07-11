@@ -72,17 +72,16 @@
 (setq-hook! 'python-mode-hook
   fill-column 88)
 
-(use-package elpy
-  :init
-  (elpy-enable))
+;; (use-package elpy
+;;   :init
+;;   (elpy-enable))
 
-(after! elpy
-  (set-company-backend! 'elpy-mode
-                        '(elpy-company-backend :with company-files company-yasnippet)))
+;; (after! elpy
+;;   (set-company-backend! 'elpy-mode
+;;                         '(elpy-company-backend :with company-files company-yasnippet)))
 
 
 (auto-save-visited-mode +1)
-
 
 
 (load! "bindings")
