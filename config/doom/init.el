@@ -4,7 +4,7 @@
 
 (doom!
        :completion
-       ;; (company +tng)          ; the ultimate code completion backend
+       (corfu +orderless)
        ;; (helm +fuzzy)     ; the *other* search engine for love and life
        ;;ido              ; the other *other* search engine...
        ;; ivy              ; a search engine for love and life
@@ -125,7 +125,9 @@
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python +lsp)           ; beautiful is better than ugly
+       (python
+           +lsp
+           +tree-sitter)   ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        rest              ; Emacs as a REST client

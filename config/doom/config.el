@@ -13,7 +13,6 @@
 
 
 (require 'color-theme-sanityinc-tomorrow)
-;; (color-theme-sanityinc-tomorrow-bright)
 
 (setq doom-font (font-spec :family "Hack" :size 25)
       doom-symbol-font (font-spec :family "Hack" :size 25)
@@ -55,14 +54,6 @@
 
 ;; (setq flycheck-global-modes '(not rust-mode))
 
-(use-package! py-isort
-  :after python
-  :config
-  (map! :map python-mode-map
-        :localleader
-        (:prefix ("s" . "sort")
-         :desc "Sort imports" "s" #'py-isort-buffer)))
-
 
 (define-key evil-normal-state-map (kbd "g~") 'evil-operator-string-inflection)
 
@@ -76,12 +67,18 @@
 ;;   :init
 ;;   (elpy-enable))
 
-;; (after! elpy
-;;   (set-company-backend! 'elpy-mode
-;;                         '(elpy-company-backend :with company-files company-yasnippet)))
-
-
 (auto-save-visited-mode +1)
+
+(after! lsp-mode
+  ;; Make sure other clients don't override it
+  (setq lsp-disabled-clients '(ruff-lsp ruff pyright pylsp))
+  ;; Register Jedi LSP manually
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection "jedi-language-server")
+    :major-modes '(python-mode)
+    :priority -1
+    :server-id 'jedi-ls)))
 
 
 (load! "bindings")

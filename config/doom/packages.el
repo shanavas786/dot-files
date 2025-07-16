@@ -19,8 +19,6 @@
 
 ;;(package! restclient)
 
-(package! py-isort)
-
 (package! graphviz-dot-mode)
 
 ;; (package! elpy)
