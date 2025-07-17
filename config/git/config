@@ -6,9 +6,16 @@
 [fsck]
 	zeroPaddedFilemode = ignore
 
+[alias]
+    dlog = -c diff.external=difft log --ext-diff
+    dshow = -c diff.external=difft show --ext-diff
+    ddiff = -c diff.external=difft diff
 
 [core]
     pager = delta
+
+# [diff]
+# 	external=difft
 
 [interactive]
     diffFilter = delta --color-only
@@ -21,5 +28,9 @@
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
     file-decoration-style = none
+
 [pull]
 	ff = only
+
+[init]
+	defaultBranch = main
