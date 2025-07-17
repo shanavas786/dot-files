@@ -16,6 +16,8 @@ curl -LsSf https://astral.sh/ruff/install.sh | sh
 # uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# cargo-binstall
+#
 # dockfmt
 
 stow config -t ~/.config
