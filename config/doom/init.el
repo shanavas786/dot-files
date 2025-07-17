@@ -69,7 +69,7 @@
        magit               ; a git porcelain for Emacs
        (eval +overlay)     ; run code, run (also, repls)
        lookup
-       lsp
+       (lsp +peek)
        tree-sitter       ; syntax and parsing, sitting in a tree...
        ;;password-store    ; password manager for nerds
        ;;pdf               ; pdf enhancements

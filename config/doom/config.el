@@ -43,7 +43,7 @@
         ("melpa" . "https://melpa.org/packages/")
         ("org"   . "https://orgmode.org/elpa/")))
 
-                                        ; deletes trailing whitespaces on every line upon saving files
+; deletes trailing whitespaces on every line upon saving files
 (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 (add-hook! 'python-mode-hook #'electric-operator-mode)
 ;; (add-hook! 'rust-mode-hook #'electric-operator-mode)
@@ -78,7 +78,8 @@
     :new-connection (lsp-stdio-connection "jedi-language-server")
     :major-modes '(python-mode)
     :priority -1
-    :server-id 'jedi-ls)))
+    :server-id 'jedi-ls))
+    )
 
 
 (load! "bindings")
