@@ -3,3 +3,6 @@
 [user]
 name = "Shanavas M"
 email = "shanavas.m2@gmail.com"
+
+[ui]
+diff-formatter = ["difft", "--color=always", "$left", "$right"]

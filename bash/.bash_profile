@@ -17,9 +17,8 @@ export LANG=en_IN.UTF-8
 
 . "$HOME/.cargo/env"
 
-if command -v java > /dev/null; then
+if command -v java >/dev/null; then
     export JAVA_HOME=$(readlink -f $(which java) | sed "s:/bin/java::")
 fi
-
 
 . "$HOME/.atuin/bin/env"

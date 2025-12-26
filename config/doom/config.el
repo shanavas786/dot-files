@@ -69,19 +69,6 @@
 
 (auto-save-visited-mode +1)
 
-(after! lsp-mode
-  ;; Make sure other clients don't override it
-  (setq lsp-disabled-clients '(ruff-lsp ruff pyright pylsp))
-  ;; Register Jedi LSP manually
-  (lsp-register-client
-   (make-lsp-client
-    :new-connection (lsp-stdio-connection "jedi-language-server")
-    :major-modes '(python-mode)
-    :priority -1
-    :server-id 'jedi-ls))
-    )
-
-
 (load! "bindings")
 
 (setq org-agenda-files (list "/opt/agenda.org"))
